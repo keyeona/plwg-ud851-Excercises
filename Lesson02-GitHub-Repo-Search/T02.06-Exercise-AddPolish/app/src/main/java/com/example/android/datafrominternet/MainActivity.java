@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mSearchResultsTextView;
 
     // TODO (12) Create a variable to store a reference to the error message TextView
+   TextView mErrorMessageTextView;
 
     // TODO (24) Create a ProgressBar variable to store a reference to the ProgressBar
 
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         mSearchResultsTextView = (TextView) findViewById(R.id.tv_github_search_results_json);
 
         // TODO (13) Get a reference to the error TextView using findViewById
+        mErrorMessageTextView = (TextView) findViewById(R.id.tv_error_message_display);
 
         // TODO (25) Get a reference to the ProgressBar using findViewById
     }
@@ -69,8 +71,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // TODO (14) Create a method called showJsonDataView to show the data and hide the error
+    private void showJsonDataView() {
+        errorMessageTextView
+
+    }
 
     // TODO (15) Create a method called showErrorMessage to show the error and hide the data
+    private void showErrorMessage() {
+
+    }
 
     public class GithubQueryTask extends AsyncTask<URL, Void, String> {
 
