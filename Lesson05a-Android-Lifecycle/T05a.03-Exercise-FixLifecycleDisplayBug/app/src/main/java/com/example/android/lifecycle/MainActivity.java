@@ -40,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
     private TextView mLifecycleDisplay;
 
     // TODO (1) Declare and instantiate a static ArrayList of Strings called mLifecycleCallbacks
+    String[] mLifecycleCallbacks = {
+            "on_create",
+            "on_start",
+            "on_resume",
+            "on_pause",
+            "on_stop",
+            "on_restart",
+            "on_destroy"
+    };
 
     /**
      * Called when the activity is first created. This is where you should do all of your normal
@@ -134,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
 
         // TODO (2) Add the ON_STOP String to the front of mLifecycleCallbacks
+
 
         logAndAppend(ON_STOP);
     }
