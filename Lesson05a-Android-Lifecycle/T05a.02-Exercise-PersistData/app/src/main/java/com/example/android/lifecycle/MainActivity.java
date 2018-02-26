@@ -150,8 +150,8 @@ public class MainActivity extends AppCompatActivity {
     // TODO (2) Override onSaveInstanceState
 
     @Override
-    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
         logAndAppend(ON_SAVE_INSTANCE_STATE);
         String lifecycleDisplayTextViewContents = mLifecycleDisplay.getText().toString();
         outState.putString(LIFECYCLE_CALLBACKS_TEXT_KEY, lifecycleDisplayTextViewContents);
