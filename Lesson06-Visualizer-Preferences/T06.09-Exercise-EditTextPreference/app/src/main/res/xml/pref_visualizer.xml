@@ -33,4 +33,10 @@
         android:key="@string/pref_color_key"
         android:title="@string/pref_color_label" />
 
+    <EditTextPreference
+        android:defaultValue="@string/pref_text_default"
+        android:title="@string/pref_text_label"
+        android:key="@string/pref_text_key"/>
+
+
 </PreferenceScreen>

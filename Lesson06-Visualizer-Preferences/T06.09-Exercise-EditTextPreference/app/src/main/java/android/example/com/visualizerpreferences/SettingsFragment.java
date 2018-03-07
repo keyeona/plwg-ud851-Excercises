@@ -80,22 +80,27 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
             int prefIndex = listPreference.findIndexOfValue(value);
             if (prefIndex >= 0) {
                 // Set the summary to that label
+
                 listPreference.setSummary(listPreference.getEntries()[prefIndex]);
+            } else if (preference instanceof EditTextPreference) {
+                // For EditTextPreferences, set the summary to the value's simple string representation.
+                preference.setSummary(value);
             }
         }
     }
-    
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getPreferenceScreen().getSharedPreferences()
-                .registerOnSharedPreferenceChangeListener(this);
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            getPreferenceScreen().getSharedPreferences()
+                    .registerOnSharedPreferenceChangeListener(this);
+        }
+
+        @Override
+        public void onDestroy() {
+            super.onDestroy();
+            getPreferenceScreen().getSharedPreferences()
+                    .unregisterOnSharedPreferenceChangeListener(this);
+        }
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        getPreferenceScreen().getSharedPreferences()
-                .unregisterOnSharedPreferenceChangeListener(this);
-    }
-}
