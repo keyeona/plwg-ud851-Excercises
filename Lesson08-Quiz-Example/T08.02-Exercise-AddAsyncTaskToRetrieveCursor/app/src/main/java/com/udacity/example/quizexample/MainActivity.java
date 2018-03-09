@@ -16,6 +16,8 @@
 
 package com.udacity.example.quizexample;
 
+import android.database.Cursor;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -91,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // TODO (1) Create AsyncTask with the following generic types <Void, Void, Cursor>
+    AsyncTask<Void, Void, Cursor>
     // TODO (2) In the doInBackground method, write the code to access the DroidTermsExample
     // provider and return the Cursor object
     // TODO (4) In the onPostExecute method, store the Cursor object in mData
