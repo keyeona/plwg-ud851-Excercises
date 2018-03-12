@@ -24,6 +24,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
+
 import com.example.android.todolist.data.TaskContentProvider;
 import com.example.android.todolist.data.TaskContract;
 import com.example.android.todolist.data.TaskDbHelper;
@@ -133,29 +134,29 @@ public class TestTaskContentProvider {
 //     * each of the Uri types that the ContentProvider can handle. Uncomment this when you are
 //     * ready to test your UriMatcher.
 //     */
-//    @Test
-//    public void testUriMatcher() {
-//
-//        /* Create a URI matcher that the TaskContentProvider uses */
-//        UriMatcher testMatcher = TaskContentProvider.buildUriMatcher();
-//
-//        /* Test that the code returned from our matcher matches the expected TASKS int */
-//        String tasksUriDoesNotMatch = "Error: The TASKS URI was matched incorrectly.";
-//        int actualTasksMatchCode = testMatcher.match(TEST_TASKS);
-//        int expectedTasksMatchCode = TaskContentProvider.TASKS;
-//        assertEquals(tasksUriDoesNotMatch,
-//                actualTasksMatchCode,
-//                expectedTasksMatchCode);
-//
-//        /* Test that the code returned from our matcher matches the expected TASK_WITH_ID */
-//        String taskWithIdDoesNotMatch =
-//                "Error: The TASK_WITH_ID URI was matched incorrectly.";
-//        int actualTaskWithIdCode = testMatcher.match(TEST_TASK_WITH_ID);
-//        int expectedTaskWithIdCode = TaskContentProvider.TASK_WITH_ID;
-//        assertEquals(taskWithIdDoesNotMatch,
-//                actualTaskWithIdCode,
-//                expectedTaskWithIdCode);
-//    }
+    @Test
+    public void testUriMatcher() {
+
+        /* Create a URI matcher that the TaskContentProvider uses */
+        UriMatcher testMatcher = TaskContentProvider.buildUriMatcher();
+
+        /* Test that the code returned from our matcher matches the expected TASKS int */
+        String tasksUriDoesNotMatch = "Error: The TASKS URI was matched incorrectly.";
+        int actualTasksMatchCode = testMatcher.match(TEST_TASKS);
+        int expectedTasksMatchCode = TaskContentProvider.TASKS;
+        assertEquals(tasksUriDoesNotMatch,
+                actualTasksMatchCode,
+                expectedTasksMatchCode);
+
+        /* Test that the code returned from our matcher matches the expected TASK_WITH_ID */
+        String taskWithIdDoesNotMatch =
+                "Error: The TASK_WITH_ID URI was matched incorrectly.";
+        int actualTaskWithIdCode = testMatcher.match(TEST_TASK_WITH_ID);
+        int expectedTaskWithIdCode = TaskContentProvider.TASK_WITH_ID;
+        assertEquals(taskWithIdDoesNotMatch,
+                actualTaskWithIdCode,
+                expectedTaskWithIdCode);
+    }
 
 
     //================================================================================
